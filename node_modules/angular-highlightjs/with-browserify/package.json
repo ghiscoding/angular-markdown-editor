@@ -1,0 +1,19 @@
+{
+  "name": "with-browserify",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./scripts/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify . -o scripts/bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.3.11",
+    "highlight.js": "^8.6.0"
+  },
+  "browserify": {
+    "transform": []
+  }
+}

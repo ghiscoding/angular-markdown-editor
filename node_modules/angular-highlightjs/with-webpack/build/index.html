@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <link href='/vendor.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <header layout layout-align="vertical-center">
+    <h1>Test Angular App</h1>
+  </header>
+  
+
+<div hljs>
+<!-- setup selection display/input input:text -->
+<p class="lead">
+  selection: <input type="text" ng-model="selection">
+</p>
+
+<!-- bind scope.selection to ngSelect model -->
+<div class="row example" ng-select="selection">
+  <div class="col-xs-12">
+    
+    <!-- five images with number as option value -->
+    <!-- add "selected" class on option selected -->
+    <img class="img-polaroid img-circle" 
+         ng-repeat="num in [1, 2, 3, 4, 5] track by $id($index)" 
+         ng-src="http://lorempixel.com/100/100/sports/{{ num }}"
+         ng-select-option="{{ num }}" 
+         select-class="{'selected': $optSelected}">
+  </div>
+</div>
+</div>
+
+  <script src="/vendor.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

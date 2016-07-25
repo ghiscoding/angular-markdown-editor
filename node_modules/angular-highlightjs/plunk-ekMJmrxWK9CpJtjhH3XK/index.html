@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/tomorrow.min.css" />
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script data-require="angular.js@1.4.x" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js" data-semver="1.4.6"></script>
+    <script src="../build/angular-highlightjs.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <h1>ngRepeat</h1>
+    <div ng-repeat="code in phpCode track by $index">
+      <div hljs hljs-source="code" hljs-language="php"></div>
+    </div>
+    <h1>non ngRepeat</h1>
+    <div hljs hljs-source="phpCode[0]" hljs-language="php"></div>
+  </body>
+
+</html>

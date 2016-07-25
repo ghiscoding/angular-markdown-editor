@@ -1,0 +1,29 @@
+{
+  "name": "angular-markdown-editor",
+  "version": "1.0.0",
+  "description": "Angular Markdown Editor, all-in-one Markdown Editor and Preview",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "markdown",
+    "angular",
+    "bootstrap-markdown"
+  ],
+  "author": "Ghislain B.",
+  "license": "MIT",
+  "dependencies": {
+    "angular-highlightjs": "^0.6.1",
+    "angular-marked": "^1.2.2",
+    "angular-sanitize": "^1.5.8",
+    "bootstrap": "^3.3.6",
+    "bootstrap-markdown": "^2.10.0",
+    "highlight.js": "^9.5.0",
+    "jquery": "^2.2.4",
+    "marked": "^0.3.5"
+  },
+  "devDependencies": {
+    "font-awesome": "^4.6.3"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "bower-test",
+  "homepage": "https://github.com/pc035860/angular-highlightjs",
+  "authors": [
+    "Chih-Hsuan Fan <pc035860@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-highlightjs": "~0.5.1"
+  }
+}

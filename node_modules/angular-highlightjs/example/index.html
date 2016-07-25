@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="exampleApp">
+<head>
+  <meta charset="UTF-8">
+  <title>angular-highlightjs examples</title>
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
+  <link rel="stylesheet/less" type="text/css" href="styles.less" />
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
+  <script src="../build/angular-highlightjs.js"></script>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers.js"></script>
+</head>
+<body ng-controller="ExampleCtrl">
+  <div class="source-overlay" ng-show="source" ng-click="toggleSource()"></div>
+
+  <div class="container">
+
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <a href="https://github.com/pc035860/angular-highlightjs" class="navbar-brand">angular-highlightjs example</a>
+      </div>
+
+      <ul class="nav navbar-nav">
+        <li ng-repeat="link in linkList" ng-class="{'active': path == link}">
+          <a ng-href="#{{ link }}" ng-bind="getNavName(link)"></a>
+        </li>
+      </ul>
+      <button class="btn btn-primary show-source" ng-click="toggleSource()" ng-show="!source">show source</button>
+      <button class="btn btn-primary show-source" ng-click="toggleSource()" ng-show="source">hide source</button>
+    </nav>
+
+    <div class="source-stage" ng-show="source">
+      <div hljs source="source"></div>
+    </div>
+    <div ng-view></div>
+  </div>
+
+</body>
+</html>
