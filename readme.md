@@ -16,7 +16,9 @@ At the end, all you need is:
 
 #### Extra options
 You can also pass any options from the [Bootstrap-Markdown](http://www.codingdrama.com/bootstrap-markdown/) by passing these options as an object to the directive.
-Like this: `<textarea markdown-editor="{'iconlibrary': 'fa'}"...` or multiple options
+Like this: `<textarea markdown-editor="{'iconlibrary': 'fa'}"...`
+
+or multiple options
 ```
 <textarea markdown-editor="{'iconlibrary': 'fa', addExtraButtons: true}"...
 ```
@@ -25,7 +27,7 @@ Like this: `<textarea markdown-editor="{'iconlibrary': 'fa'}"...` or multiple op
 I really thought that some buttons were missing to go a great job (Strikethrough &amp; Table). So I added them to the directive, though they are not enabled by default, you need to enable them manually if you want them or not.
 Like this:
 ```
-<textarea markdown-editor="{addExtraButtons: true}"...
+<textarea markdown-editor="{addExtraButtons: true, 'iconlibrary': 'fa'}"...
 ```
 
 ## Dependencies
