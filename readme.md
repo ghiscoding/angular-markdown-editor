@@ -28,9 +28,8 @@ At the end, all you need is:
 <textarea ng-model="markdown" markdown-editor="" rows="10"></textarea>
 ```
 
-### Editor Extra options
-You can use any of the [Bootstrap-Markdown Options](http://www.codingdrama.com/bootstrap-markdown/) by passing them as an object to the `markdown-editor` directive attribute.
-Like this: `<textarea markdown-editor="{'iconlibrary': 'fa'}"...`
+### Editor extra options
+You can use any of the [Bootstrap-Markdown Options](http://www.codingdrama.com/bootstrap-markdown/) by passing them as an object to the `markdown-editor` directive attribute. Like this: `<textarea markdown-editor="{'iconlibrary': 'fa'}"...`
 
 or multiple options
 ```
@@ -38,8 +37,7 @@ or multiple options
 ```
 
 ### Editor extra buttons
-I really thought that some buttons were missing to go a great job (**Strikethrough** &amp; **Table**). So I added them to the directive, they are not enabled by default, so you will need to enable them manually if you do want to use them.
-Like this:
+I really thought that some buttons were missing to go a great job (~~Strikethrough~~ &amp; **Table**). So I added them within the directive as an option. They are not enabled by default, so you will need to enable them manually if you do want to use them with the option of `addExtraButtons`.
 ```
 <textarea markdown-editor="{addExtraButtons: true, 'iconlibrary': 'fa'}"...
 ```
