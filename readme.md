@@ -1,5 +1,5 @@
 # Angular Markdown Editor (Directive)
-`1.0.2`
+`1.0.3`
 
 ## What do we have?
 I have put together a few libraries and tools to make a convenient "all in one" WYSIWYG Markdown Editor and preview. All of that with a simple AngularJS Directive call. I plan to use this mainly for online documentation but it could be useful for many other reasons. Also planning to add a 1-click button for simple Copy+Paste to email.
@@ -81,4 +81,4 @@ I really thought that some buttons were missing to go a great job (~~Strikethrou
 * [jQuery](http://jquery.com/) _(required for Bootstrap-Markdown editor)_
 
 ## Preview
-![Login Page](/images/scrshot_preview.png)
+![Login Page](https://github.com/ghiscoding/angular-markdown-editor/blob/master/images/scrshot_preview.png)
