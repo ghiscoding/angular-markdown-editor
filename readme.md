@@ -47,7 +47,7 @@ _NOTE: Unfortunately, the "highlight.js" npm module doesn't seem to have proper 
 ### Inside the HTML
 Simply create a `<textarea>` with an `ngModel` and a call to the Directive.
 At the end, all you need is:
-```
+```html
 <!-- editor -->
 <textarea ng-model="markdown" markdown-editor="" rows="10"></textarea>
 
