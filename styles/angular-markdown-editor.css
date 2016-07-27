@@ -14,22 +14,27 @@ textarea {
 }
 
 /* http://johnsardine.com/freebies/dl-html-css/simple-little-tab/ */
-table a:link {
+.marked > table a:link,
+.markdown > table a:link {
 	color: #666;
 	font-weight: bold;
 	text-decoration:none;
 }
-table a:visited {
+.marked > table a:visited,
+.markdown > table a:visited {
 	color: #999999;
 	font-weight:bold;
 	text-decoration:none;
 }
-table a:active,
-table a:hover {
+.marked > table a:active,
+.marked > table a:hover,
+.markdown > table a:active,
+.markdown > table a:hover {
 	color: #bd5a35;
 	text-decoration:underline;
 }
-table {
+.marked > table,
+.markdown > table {
 	font-family:Arial, Helvetica, sans-serif;
 	color:#606060;
 	font-size:15px;
@@ -41,36 +46,43 @@ table {
 	-webkit-border-radius:3px;
 	border-radius:3px;
 }
-table th {
+.marked > table th,
+.markdown > table th {
 	padding:8px 15px;
 	border-bottom:1px solid #e0e0e0;
 	background: #f6f6f6;
   color:#333;
 }
-table th:first-child {
+.marked > table th:first-child,
+.markdown > table th:first-child {
 	text-align: left;
 	padding-left:10px;
 }
-table tr:first-child th:first-child {
+.marked > table tr:first-child th:first-child,
+.markdown > table tr:first-child th:first-child {
 	-moz-border-radius-topleft:3px;
 	-webkit-border-top-left-radius:3px;
 	border-top-left-radius:3px;
 }
-table tr:first-child th:last-child {
+.marked > table tr:first-child th:last-child,
+.markdown > table tr:first-child th:last-child {
 	-moz-border-radius-topright:3px;
 	-webkit-border-top-right-radius:3px;
 	border-top-right-radius:3px;
 }
-table tr {
+.marked > table tr,
+.markdown > table tr {
 	text-align: center;
 	padding-left:10px;
 }
-table td:first-child {
+.marked > table td:first-child,
+.markdown > table td:first-child {
 	text-align: left;
 	padding-left:10px;
 	border-left: 0;
 }
-table td {
+.marked > table td,
+.markdown > table td {
 	padding:8px;
 	border-top: 1px solid #ffffff;
 	border-bottom:1px solid #e0e0e0;
@@ -79,23 +91,28 @@ table td {
 	background: #fff;
 }
 
-table tr:nth-child(2n) td {
+.marked > table tr:nth-child(2n) td,
+.markdown > table tr:nth-child(2n) td {
 	background: #f8f8f8;
 }
-table tr:last-child td {
+.marked > table tr:last-child td,
+.markdown > table tr:last-child td {
 	border-bottom:0;
 }
-table tr:last-child td:first-child {
+.marked > table tr:last-child td:first-child,
+.markdown > table tr:last-child td:first-child {
 	-moz-border-radius-bottomleft:3px;
 	-webkit-border-bottom-left-radius:3px;
 	border-bottom-left-radius:3px;
 }
-table tr:last-child td:last-child {
+.marked > table tr:last-child td:last-child,
+.markdown > table tr:last-child td:last-child {
 	-moz-border-radius-bottomright:3px;
 	-webkit-border-bottom-right-radius:3px;
 	border-bottom-right-radius:3px;
 }
-table tr:hover td {
+.marked > table tr:hover td,
+.markdown > table tr:hover td {
 	background: #f4f4f4;
 	background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#f2f2f2));
 	background: -moz-linear-gradient(top,  #f4f4f4,  #f2f2f2);

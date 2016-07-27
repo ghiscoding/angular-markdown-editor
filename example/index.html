@@ -3,13 +3,14 @@
 	<head>
 	  <meta charset="utf-8">
 	  <title>Angular-Mardown-Editor (ghiscoding)</title>
+		<!-- CSS Stylesheet -->
+		<link rel="stylesheet" href="../styles/angular-markdown-editor.css">
 		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../node_modules/bootstrap-markdown/css/bootstrap-markdown.min.css">
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/tomorrow.min.css">
-	  <link rel="stylesheet" href="../styles/angular-markdown-editor.css">
 
-		<!-- external librairies CDN -->
+		<!-- Scripts -->
 		<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
@@ -33,7 +34,7 @@
 
 			<hr/>
 
-			<marked>
+			<marked class="markdown">
 			    ## Angular Markdown Editor Directive
 			    *It works!*
 					#### Markdown [cheatsheet](//github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
@@ -51,7 +52,7 @@
 				<div class="col-md-12 col-lg-6 fill">
 						<div class="form-group">
 								<label for="comment">Preview Result:</label>
-								<div marked="markdown" class="outline" style="padding: 20px">
+								<div marked="markdown" class="markdown outline" style="padding: 20px">
 								</div>
 						</div>
 				</div>
@@ -59,7 +60,7 @@
 
 		<hr/>
 
-		<div class="outline" style="padding:20px; margin-bottom: 20px" marked src="'readme.md'">
+		<div class="markdown outline" style="padding:20px; margin-bottom: 20px" marked src="'readme.md'">
 		</div>
 
 		</div>

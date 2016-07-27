@@ -1,5 +1,5 @@
 # Angular Markdown Editor (Directive)
-`1.0.1`
+`1.0.2`
 
 ## What do we have?
 I have put together a few libraries and tools to make a convenient "all in one" WYSIWYG Markdown Editor and preview. All of that with a simple AngularJS Directive call. I plan to use this mainly for online documentation but it could be useful for many other reasons. Also planning to add a 1-click button for simple Copy+Paste to email.
@@ -21,11 +21,39 @@ _Some of the dependencies were added by hand to this package (because they don't
 PM> Install-Package Angular-Markdown-Editor
 ```
 
+### Include Styles &amp; Scripts
+_NOTE: Unfortunately, the "highlight.js" npm module doesn't seem to have proper bundles, so it's easier for us get the minified CSS and JS files directly from CDN where they are bundled correctly. As for the highlight style, if you want to use another style, then you can replace the "...xxx.min.css" by the name you want to use, for example if we want to use "github", that would be "highlight.js/.../github.min.css"_
+```html
+<!-- CSS Stylesheet -->
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../node_modules/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/github.min.css">
+<link rel="stylesheet" href="../node_modules/angular-markdown-editor/styles/angular-markdown-editor.css">
+
+<!-- Scripts -->
+<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="../node_modules/marked/lib/marked.js"></script>
+<script type="text/javascript" src="../node_modules/angular-marked/dist/angular-marked.min.js"></script>
+<script type="text/javascript" src="../node_modules/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+<script type="text/javascript" src="../node_modules/angular-highlightjs/src/angular-highlightjs.js"></script>
+<script type="text/javascript" src="../node_modules/angular-markdown-editor/src/angular-markdown-editor.js"></script>
+```
+
 ### Inside the HTML
 Simply create a `<textarea>` with an `ngModel` and a call to the Directive.
 At the end, all you need is:
 ```
+<!-- editor -->
 <textarea ng-model="markdown" markdown-editor="" rows="10"></textarea>
+
+<-- preview... be sure to include the "angular-markdown-editor.css" style -->
+<!-- use "markdown" or "marked" on your <div> preview to show Tables correctly -->
+<div marked="markdown" class="markdown" style="padding: 20px"></div>
 ```
 
 ### Editor extra options
@@ -37,7 +65,7 @@ or multiple options
 ```
 
 ### Editor extra buttons
-I really thought that some buttons were missing to go a great job (~~Strikethrough~~ &amp; **Table**). So I added them within the directive as an option. They are not enabled by default, so you will need to enable them manually if you do want to use them with the option of `addExtraButtons`.
+I really thought that some buttons were missing to go a great job (~~Strikethrough~~ &amp; **Table**). So I added them within the directive as an option. They are not enabled by default, so you will need to enable them manually, that is if you do want to use them. The option argument is `addExtraButtons` to `true`.
 ```
 <textarea markdown-editor="{addExtraButtons: true, 'iconlibrary': 'fa'}"...
 ```
