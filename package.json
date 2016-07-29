@@ -26,5 +26,9 @@
     "font-awesome": "^4.6.3"
   },
   "license": "MIT",
-  "homepage": "https://github.com/ghiscoding/angular-markdown-editor"
+  "homepage": "https://github.com/ghiscoding/angular-markdown-editor",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ghiscoding/angular-markdown-editor"
+  }
 }
