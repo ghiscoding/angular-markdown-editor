@@ -1,0 +1,41 @@
+{
+  "name": "angular-markdown-editor-ghiscoding",
+  "version": "1.0.6",
+  "author": "Ghislain B.",
+  "description": "Angular Markdown Editor, all-in-one Markdown Editor and Preview",
+  "main": [
+    "src/angular-markdown-editor.js",
+    "styles/angular-markdown-editor.css"
+  ],
+  "keywords": [
+    "angular-validation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "example",
+    "images",
+    "gulpfile.js",
+    "readme.md",
+    "README.md"
+  ],
+  "homepage": "https://github.com/ghiscoding/angular-markdown-editor",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ghiscoding/angular-markdown-editor"
+  },
+  "dependencies": {
+    "angular-highlightjs": "^0.6.1",
+    "angular-marked": "^1.2.2",
+    "angular-sanitize": "^1.5.8",
+    "bootstrap": "^3.3.6",
+    "bootstrap-markdown": "^2.10.0",
+    "highlight.js": "^9.5.0",
+    "jquery": "^2.2.4",
+    "marked": "^0.3.5"
+  },
+  "devDependencies": {
+    "font-awesome": "^4.6.3"
+  }
+}

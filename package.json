@@ -1,6 +1,6 @@
 {
   "name": "angular-markdown-editor",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Ghislain B.",
   "description": "Angular Markdown Editor, all-in-one Markdown Editor and Preview",
   "main": "app.js",
