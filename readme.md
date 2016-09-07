@@ -21,9 +21,9 @@ In this package you a few libraries and tools to make a more convenient "all in 
 
 ## How to use it?
 ### Installation
-##### Bower _(`angular-markdown-editor` already exist on Bower, so I use a different name)_
+##### [Bower](https://bower.io/search/) _(`angular-markdown-editor` already exist on Bower, so I use a different name)_
 ```bash
-npm install angular-markdown-editor-ghiscoding
+bower install angular-markdown-editor-ghiscoding
 ```
 ##### [NPM](https://www.npmjs.com/package/angular-markdown-editor)
 ```bash
