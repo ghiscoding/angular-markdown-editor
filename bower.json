@@ -31,7 +31,7 @@
     "angular-sanitize": "^1.5.8",
     "bootstrap": "^3.3.6",
     "bootstrap-markdown": "^2.10.0",
-    "highlight.js": "^9.5.0",
+    "highlight.js.origin": "^9.5.0",
     "jquery": "^2.2.4",
     "marked": "^0.3.5"
   },

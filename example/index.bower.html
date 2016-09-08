@@ -1,0 +1,70 @@
+<!doctype html>
+<html ng-strict-di>
+	<head>
+	  <meta charset="utf-8">
+	  <title>Angular-Mardown-Editor (ghiscoding)</title>
+		<!-- CSS Stylesheet -->
+		<link rel="stylesheet" href="../styles/angular-markdown-editor.css">
+		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../bower_components/bootstrap-markdown/css/bootstrap-markdown.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/tomorrow.min.css">
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+		<script type="text/javascript" src="../bower_components/marked/lib/marked.js"></script>
+		<script type="text/javascript" src="../bower_components/angular-marked/dist/angular-marked.min.js"></script>
+		<script type="text/javascript" src="../bower_components/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+		<script type="text/javascript" src="../bower_components/angular-highlightjs/src/angular-highlightjs.js"></script>
+
+		<!-- your ng-app file -->
+  	<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="../src/angular-markdown-editor.js"></script>
+	</head>
+
+	<body ng-app="example-app" ng-controller="MainController">
+		<div class="container">
+			<h1>Angular Markdown Editor</h1>
+			<a href="https://github.com/ghiscoding/angular-bootstrap-marked">Ghiscoding Github Project</a> |
+			<a href="http://plnkr.co/edit/jADq7H?p=preview">Plunker Live Demo</a>
+
+			<hr/>
+
+			<marked class="markdown">
+			    ## Angular Markdown Editor Directive
+			    *It works!*
+					#### Markdown [cheatsheet](//github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+			</marked>
+
+			<hr/>
+
+		<div class="row">
+				<div class="col-md-12 col-lg-6">
+						<div class="form-group">
+								<label for="comment">Live Markdown with <a href="http://www.codingdrama.com/bootstrap-markdown/">Bootstrap-Markdown Editor</a>:</label>
+								<textarea name="content" class="content-box" markdown-editor="{'iconlibrary': 'fa', addExtraButtons: true, resize: 'vertical'}" rows="10" ng-model="markdown"></textarea>
+						</div>
+				</div>
+				<div class="col-md-12 col-lg-6 fill">
+						<div class="form-group">
+								<label for="comment">Preview Result:</label>
+								<div marked="markdown" class="markdown outline" style="padding: 20px">
+								</div>
+						</div>
+				</div>
+		</div>
+
+		<hr/>
+
+		<div class="markdown outline" style="padding:20px; margin-bottom: 20px" marked src="'readme.md'">
+		</div>
+
+		</div>
+    <a href="https://github.com/ghiscoding/angular-markdown-editor"><img style="position: absolute; top: 0; right: 0; border: 0;" src="//camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="//s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
+  </body>
+</html>
