@@ -1,5 +1,5 @@
 # Angular Markdown Editor (Directive)
-`1.0.6`
+`1.0.7`
 
 ## What do we have?
 In this package you a few libraries and tools to make a more convenient "all in one" WYSIWYG Markdown Editor with preview. All of that with a simple AngularJS Directive call. I plan to use this mainly for online documentation but it could be useful for many other reasons (doc, blog, etc...). Also planning on adding a 1-click button for simple Copy+Paste to email.
