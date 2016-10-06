@@ -1,5 +1,5 @@
 # Angular Markdown Editor (Directive)
-`1.0.7`
+`1.0.9`
 
 ## What do we have?
 In this package you a few libraries and tools to make a more convenient "all in one" WYSIWYG Markdown Editor with preview. All of that with a simple AngularJS Directive call. I plan to use this mainly for online documentation but it could be useful for many other reasons (doc, blog, etc...). Also planning on adding a 1-click button for simple Copy+Paste to email.
@@ -21,7 +21,7 @@ In this package you a few libraries and tools to make a more convenient "all in 
 
 ## How to use it?
 ### Installation
-##### [Bower](https://bower.io/search/) _(`angular-markdown-editor` already exist on Bower, so I use a different name)_
+##### [Bower](https://bower.io/search/) _(`angular-markdown-editor` already exist on Bower, so I had to use a different name)_
 ```bash
 bower install angular-markdown-editor-ghiscoding
 ```
@@ -56,6 +56,9 @@ _NOTE: Unfortunately, the "highlight.js" npm module doesn't seem to have proper 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
 <script type="text/javascript" src="../node_modules/angular-highlightjs/src/angular-highlightjs.js"></script>
 <script type="text/javascript" src="../node_modules/angular-markdown-editor/src/angular-markdown-editor.js"></script>
+
+<!-- you can add your own locale with this file, if you had new locale please make a PR -->
+<script type="text/javascript" src="../node_modules/angular-markdown-editor/src/angular-markdown-editor-locale.js"></script>
 ```
 
 ### Inside the HTML
