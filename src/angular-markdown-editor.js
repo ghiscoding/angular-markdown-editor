@@ -1,6 +1,6 @@
 angular
   .module('angular-markdown-editor', [])
-  .directive('markdownEditor', ['$parse', function(parse) {
+  .directive('markdownEditor', ['$rootScope', function ($rootScope) {
     return {
         restrict: 'A',
         require:  'ngModel',
@@ -31,10 +31,36 @@ angular
                   enableDropDataUri: options.enableDropDataUri || false,
                   showButtons: options.showButtons || null,
                   additionalButtons: options.additionalButtons || (options.addExtraButtons ? addNewButtons() : []),
-                  onChange: function(event) {
-                      // When a change occurs, we need to update scope in case the user clicked one of the plugin buttons
-                      // (which isn't the same as a keydown event that angular would listen for).
-                      ngModel.$setViewValue(event.getContent());
+
+                  //-- Events/Hooks --
+                  // each of them are defined as callback available in the directive
+                  // example: <textarea markdown-editor="{'iconlibrary': 'fa'}" on-fullscreen-exit="vm.exitFullScreenCallback()"></textarea>
+                  //  NOTE: If you want this one to work, you will have to manually download the JS file, not sure why but they haven't released any versions in a while
+                  //       https://github.com/toopay/bootstrap-markdown/tree/master/js
+                  onPreview: function (e) { runScopeFunction(scope, attrs.onPreview, e); },
+                  onPreviewEnd: function (e) { runScopeFunction(scope, attrs.onPreviewEnd, e); },
+                  onSave: function (e) { runScopeFunction(scope, attrs.onSave, e); },
+                  onBlur: function (e) { runScopeFunction(scope, attrs.onBlur, e); },
+                  onFocus: function (e) { runScopeFunction(scope, attrs.onFocus, e); },
+                  onFullscreen: function (e) { runScopeFunction(scope, attrs.onFullscreen, e); },
+                  onSelect: function (e) { runScopeFunction(scope, attrs.onSelect, e); },
+                  onFullscreenExit: function (e) { runScopeFunction(scope, attrs.onFullscreenExit, e); },
+                  onChange: function(e) {
+                    // When a change occurs, we need to update scope in case the user clicked one of the plugin buttons
+                    // (which isn't the same as a keydown event that angular would listen for).
+                    ngModel.$setViewValue(e.getContent());
+
+                    runScopeFunction(scope, attrs.onChange, e);
+                  },
+                  onShow: function (e) {
+                    // keep the Markdown Object in $rootScope so that it's available also from anywhere (like in the parent controller)
+                    // we will keep this in an object under the ngModel name so that it also works having multiple editor in same controller
+                    $rootScope.markdownEditorObjects = $rootScope.markdownEditorObjects || {};
+                    $rootScope.markdownEditorObjects[ngModel.$name] = e;
+
+                    if (!!attrs.onShow) {
+                      runScopeFunction(scope, attrs.onShow, e);
+                    }
                   }
                 });
             }
@@ -114,4 +140,33 @@ function addNewButtons() {
           }
         }]
   }]];
+}
+
+/** Evaluate a function name passed as string and run it from the scope.
+  * The function name could be passed with/without brackets "()", in any case we will run the function
+  * @param object self object
+  * @param string function passed as a string
+  * @param object Markdown Editor object
+  * @result mixed result
+  */
+function runScopeFunction(scope, fnString, editorObject) {
+  if (!fnString) {
+    return;
+  }
+
+  // Find if our function has the brackets "()"
+  if (/\({1}.*\){1}/gi.test(fnString)) {
+    // if yes then run it through $eval else find it in the scope and then run it. That is the only way to evaluate all arguments of the function
+    // we'll have to make the object available in the scope so that we can evaluate it inside the controller
+    var lastParenthese = fnString.indexOf(")");
+    scope.$markdownEditorObject = editorObject; 
+    fnString = fnString.replace(")", "$markdownEditorObject)");
+    result = scope.$eval(fnString);
+  } else {
+    var fct = objectFindById(scope, fnString, '.');
+    if (typeof fct === "function") {
+      result = fct(editorObject);
+    }
+  }
+  return result;
 }

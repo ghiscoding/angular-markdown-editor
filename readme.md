@@ -1,5 +1,5 @@
 # Angular Markdown Editor (Directive)
-`1.0.9`
+`1.1.0`
 
 ## What do we have?
 In this package you a few libraries and tools to make a more convenient "all in one" WYSIWYG Markdown Editor with preview. All of that with a simple AngularJS Directive call. I plan to use this mainly for online documentation but it could be useful for many other reasons (doc, blog, etc...). Also planning on adding a 1-click button for simple Copy+Paste to email.
@@ -57,8 +57,8 @@ _NOTE: Unfortunately, the "highlight.js" npm module doesn't seem to have proper 
 <script type="text/javascript" src="../node_modules/angular-highlightjs/src/angular-highlightjs.js"></script>
 <script type="text/javascript" src="../node_modules/angular-markdown-editor/src/angular-markdown-editor.js"></script>
 
-<!-- you can add your own locale with this file, if you had new locale please make a PR -->
-<script type="text/javascript" src="../node_modules/angular-markdown-editor/src/angular-markdown-editor-locale.js"></script>
+<!-- You could also load any available locale, look on their website https://github.com/toopay/bootstrap-markdown/tree/master/locale -->
+<script type="text/javascript" src="../node_modules/bootstrap-markdown/locale/bootstrap-markdown.fr.js"></script>
 ```
 
 ### Inside the HTML
@@ -85,6 +85,71 @@ or multiple options
 I really thought that some buttons were missing to go a great job (~~Strikethrough~~ &amp; **Table**). So I added them within the directive as an option. They are not enabled by default, so you will need to enable them manually, that is if you do want to use them. The option argument is `addExtraButtons` to `true`.
 ```
 <textarea markdown-editor="{addExtraButtons: true, 'iconlibrary': 'fa'}"...
+```
+
+### Event Hooks
+###### starting with Angular-Markdown-Editor version 1.1.0
+You have access to all the Bootstrap Markdown Editor available events/hooks directly in the directive
+
+_NOTE: It seems that Bootstrap Markdown Editor haven't releease any versions in a while but a lot of commits are still happening. If you want all the Events/Hooks to work, you should manually download the [Bootstrap Markdown Editor.js](https://github.com/toopay/bootstrap-markdown/tree/master/js) file yourself._
+
+- onPreview
+- onPreviewEnd
+- onSave
+- onBlur
+- onFocus
+- onFullscreen
+- onFullscreenExit
+- onChange
+- onSelect
+- onShow
+
+For example HTML
+```html
+<textarea name="editor1" class="content-box"
+		ng-model="editor1"
+		markdown-editor="{'iconlibrary': 'fa', addExtraButtons: true, resize: 'vertical'}"
+		on-fullscreen="onFullScreenCallback()"
+		on-fullscreen-exit="onFullScreenExitCallback()"
+		rows="10" >
+</textarea>
+```
+Controller
+You can call any API functions defined in Markdown Editor, take a look at their API section [Bootstrap Markdown Editor - API functions](http://www.codingdrama.com/bootstrap-markdown/)
+
+```javascript
+/** Markdown event hook onFullscreen, in this example we will automatically show the result preview when going in full screen
+ * the argument (e) is the actual Markdown object returned which help call any of API functions defined in Markdown Editor
+ * @param object e: Markdown Editor object
+ */
+$scope.onFullScreenCallback = function(e) {
+    e.showPreview();
+}
+```
+
+### External function calls through $rootScope.markdownEditorObjects
+###### starting with Angular-Markdown-Editor version 1.1.0
+For conveniencies and for possible external function calls, Angular-Markdown-Editor saves each of the Markdown Editors inside `$rootScope.markdownEditorObjects[editorName]`. This basically means that on any define editor, we could call any of the [Bootstrap Markdown Editor - API functions](http://www.codingdrama.com/bootstrap-markdown/).
+This varies with previous subject of (Event Hooks), since using the `$rootScope.markdownEditorObjects` can be called at any and makes perfect for example on a function attached to a button (for example an external button for a Full Screen Preview as shown below).
+
+For example HTML
+```html
+<button class="btn btn-info" ng-click="fullScreenPreview()">Full Screen Preview</button>
+```
+
+Controller
+```javascript
+/**
+ * For some convenience, Angular-Markdown-Editor Directive also save each Markdown Editor inside $rootScope
+ * Each of editor object are available through their $rootScope.markdownEditorObjects[editorName]
+ *
+ * Example: <textarea name="editor1" markdown-editor="{'iconlibrary': 'fa'}"></textarea>
+ * We would then call our object through $rootScope.markdownEditorObjects.editor1
+ */
+$scope.fullScreenPreview = function() {
+	$rootScope.markdownEditorObjects.editor1.showPreview();
+	$rootScope.markdownEditorObjects.editor1.setFullscreen(true);
+}
 ```
 
 ## Preview

@@ -23,8 +23,10 @@
 
 		<!-- your ng-app file -->
 		<script type="text/javascript" src="../src/angular-markdown-editor.js"></script>
-		<script type="text/javascript" src="../src/angular-markdown-editor-locale.js"></script>
   		<script type="text/javascript" src="app.js"></script>
+
+  		<!-- You could also load any available locale -->
+  		<script type="text/javascript" src="../node_modules/bootstrap-markdown/locale/bootstrap-markdown.fr.js"></script>
 	</head>
 
 	<body ng-app="example-app" ng-controller="MainController">
@@ -43,20 +45,32 @@
 
 			<hr/>
 
+		<div>
+			External Markdown Editor API Calls with `$rootScope.markdownEditorObjects`
+			<br/>
+			<button class="btn btn-info" ng-click="fullScreenPreview()">Full Screen Preview</button>
+		</div>
+		<hr/>
 		<div class="row">
-				<div class="col-md-12 col-lg-6">
-						<div class="form-group">
-								<label for="comment">Live Markdown with <a href="http://www.codingdrama.com/bootstrap-markdown/">Bootstrap-Markdown Editor</a>:</label>
-								<textarea name="content" class="content-box" markdown-editor="{'iconlibrary': 'fa', addExtraButtons: true, resize: 'vertical'}" rows="10" ng-model="markdown"></textarea>
-						</div>
+			<div class="col-md-12 col-lg-6">
+				<div class="form-group">
+					<label for="comment">Live Markdown with <a href="http://www.codingdrama.com/bootstrap-markdown/">Bootstrap-Markdown Editor</a>:</label>
+					<textarea 	name="editor1" class="content-box"
+								ng-model="editor1"
+								markdown-editor="{'iconlibrary': 'fa', addExtraButtons: true, resize: 'vertical'}"
+								on-fullscreen="onFullScreenCallback()"
+								on-fullscreen-exit="onFullScreenExitCallback()"
+								rows="10" >
+					</textarea>
 				</div>
-				<div class="col-md-12 col-lg-6 fill">
-						<div class="form-group">
-								<label for="comment">Preview Result:</label>
-								<div marked="markdown" class="markdown outline" style="padding: 20px">
-								</div>
-						</div>
+			</div>
+			<div class="col-md-12 col-lg-6 fill">
+				<div class="form-group">
+					<label for="comment">Preview Result:</label>
+					<div marked="editor1" class="markdown outline" style="padding: 20px">
+					</div>
 				</div>
+			</div>
 		</div>
 
 		<hr/>
