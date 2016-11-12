@@ -89,7 +89,7 @@ I really thought that some buttons were missing to go a great job (~~Strikethrou
 
 ## Event Hooks
 ###### starting with Angular-Markdown-Editor version 1.1.0
-You have access to all the Bootstrap Markdown Editor available events/hooks directly in the directive
+You have access to all the [Bootstrap Markdown Editor available Events/Hook](http://www.codingdrama.com/bootstrap-markdown/) directly in the directive
 
 _(*) NOTE: It seems that Bootstrap Markdown Editor haven't release any versions in a while now, however there's still lot of commits happening. If you want all the Events/Hooks to work, you will have to manually download the [Bootstrap Markdown Editor.js](https://github.com/toopay/bootstrap-markdown/tree/master/js) file yourself._
 
