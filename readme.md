@@ -2,9 +2,9 @@
 `1.1.0`
 
 ## What do we have?
-In this package you a few libraries and tools to make a more convenient "all in one" WYSIWYG Markdown Editor with preview. All of that with a simple AngularJS Directive call. I plan to use this mainly for online documentation but it could be useful for many other reasons (doc, blog, etc...). Also planning on adding a 1-click button for simple Copy+Paste to email.
+In this package we will use a few libraries and tools to make a more convenient "all in one" WYSIWYG Markdown Editor with preview. All of that with a simple AngularJS Directive call. I plan to use this mainly for online documentation but it could be useful for many other reasons (docs, blog, etc...).
 
-[Marked.js](https://github.com/chjj/marked) is awesome for markdown preview and [Highlight.js](https://highlightjs.org/) is a must for easy code viewing with colors highlighting. The [Bootstrap-Markdown](http://www.codingdrama.com/bootstrap-markdown/) is a really great and simplified WYSIWYG editor which was simply missing integration with AngularJS and so I created a Directive to handle that. For all of these great tools, we will use their AngularJS version for easier integration (for example `Marked.js` and `Angular-Marked`)
+[Marked.js](https://github.com/chjj/marked) is awesome for markdown preview and [Highlight.js](https://highlightjs.org/) is a must have for easiser code viewing with colors highlighting. The [Bootstrap-Markdown](http://www.codingdrama.com/bootstrap-markdown/) is a really great and minimalist looking as a simplified WYSIWYG editor. This editor was simply missing an AngularJS all-in-one package and so I created a Directive to handle all of that. For all of these great tools, we will use their AngularJS version (as much as possible) for easier integration as for example `Marked.js` AngularJS version is `Angular-Marked`.
 
 ## Demo
 [Live Plunker demo](http://plnkr.co/AFxN7uiwkZlJ9OMZwXey) or take a look at the demo under the folder [example](https://github.com/ghiscoding/angular-markdown-editor/tree/master/example).
@@ -62,18 +62,18 @@ _NOTE: Unfortunately, the "highlight.js" npm module doesn't seem to have proper 
 ```
 
 ### Inside the HTML
-Simply create a `<textarea>` with an `ngModel` and a call to the Directive.
+Simply create a `<textarea>` with an `ngModel` and a `name` then a call to the Directive.
 At the end, all you need is:
 ```html
 <!-- editor -->
-<textarea ng-model="markdown" markdown-editor="" rows="10"></textarea>
+<textarea ng-model="editor1" name="editor1" markdown-editor="" rows="10"></textarea>
 
 <-- preview... be sure to include the "angular-markdown-editor.css" style -->
 <!-- use "markdown" or "marked" on your <div> preview to show Tables correctly -->
-<div marked="markdown" class="markdown" style="padding: 20px"></div>
+<div marked="editor1" class="markdown" style="padding: 20px"></div>
 ```
 
-### Editor extra options
+## Editor options
 You can use any of the [Bootstrap-Markdown Options](http://www.codingdrama.com/bootstrap-markdown/) by passing them as an object to the `markdown-editor` directive attribute. Like this: `<textarea markdown-editor="{'iconlibrary': 'fa'}"...`
 
 or multiple options
@@ -81,25 +81,25 @@ or multiple options
 <textarea markdown-editor="{'iconlibrary': 'fa', addExtraButtons: true}"...
 ```
 
-### Editor extra buttons
+## Editor extra buttons
 I really thought that some buttons were missing to go a great job (~~Strikethrough~~ &amp; **Table**). So I added them within the directive as an option. They are not enabled by default, so you will need to enable them manually, that is if you do want to use them. The option argument is `addExtraButtons` to `true`.
 ```
 <textarea markdown-editor="{addExtraButtons: true, 'iconlibrary': 'fa'}"...
 ```
 
-### Event Hooks
+## Event Hooks
 ###### starting with Angular-Markdown-Editor version 1.1.0
 You have access to all the Bootstrap Markdown Editor available events/hooks directly in the directive
 
-_NOTE: It seems that Bootstrap Markdown Editor haven't releease any versions in a while but a lot of commits are still happening. If you want all the Events/Hooks to work, you should manually download the [Bootstrap Markdown Editor.js](https://github.com/toopay/bootstrap-markdown/tree/master/js) file yourself._
+_(*) NOTE: It seems that Bootstrap Markdown Editor haven't release any versions in a while now, however there's still lot of commits happening. If you want all the Events/Hooks to work, you will have to manually download the [Bootstrap Markdown Editor.js](https://github.com/toopay/bootstrap-markdown/tree/master/js) file yourself._
 
 - onPreview
-- onPreviewEnd
+- onPreviewEnd (*)
 - onSave
 - onBlur
 - onFocus
 - onFullscreen
-- onFullscreenExit
+- onFullscreenExit (*)
 - onChange
 - onSelect
 - onShow
@@ -127,10 +127,11 @@ $scope.onFullScreenCallback = function(e) {
 }
 ```
 
-### External function calls through $rootScope.markdownEditorObjects
+## External function calls through $rootScope.markdownEditorObjects
 ###### starting with Angular-Markdown-Editor version 1.1.0
-For conveniencies and for possible external function calls, Angular-Markdown-Editor saves each of the Markdown Editors inside `$rootScope.markdownEditorObjects[editorName]`. This basically means that on any define editor, we could call any of the [Bootstrap Markdown Editor - API functions](http://www.codingdrama.com/bootstrap-markdown/).
-This varies with previous subject of (Event Hooks), since using the `$rootScope.markdownEditorObjects` can be called at any and makes perfect for example on a function attached to a button (for example an external button for a Full Screen Preview as shown below).
+For conveniencies and for possible external function calls, Angular-Markdown-Editor saves each of the Markdown Editors inside `$rootScope.markdownEditorObjects[editorName]`. This basically means that on any defined editor, we could call some of the [Bootstrap Markdown Editor - API functions](http://www.codingdrama.com/bootstrap-markdown/).
+
+This varies with previous subject of (Event Hooks), since using the `$rootScope.markdownEditorObjects` can be called at any time and makes perfect sense on buttons that are outside of the editor. Take for example an external button for a Full Screen Preview as it is shown in code below.
 
 For example HTML
 ```html
