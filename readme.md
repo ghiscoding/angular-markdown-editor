@@ -153,5 +153,8 @@ $scope.fullScreenPreview = function() {
 }
 ```
 
+##License
+[MIT License](http://www.opensource.org/licenses/mit-license.php)
+
 ## Preview
 ![Login Page](https://raw.githubusercontent.com/ghiscoding/angular-markdown-editor/master/images/scrshot_preview.png)
