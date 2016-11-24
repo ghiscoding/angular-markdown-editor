@@ -15,6 +15,7 @@ angular
                 element.markdown({
                   autofocus: options.autofocus || false,
                   saveable: options.saveable || false,
+                  savable: options.savable || false,
                   iconlibrary: options.iconlibrary || 'glyph',
                   hideable: options.hideable || false,
                   width: options.width || 'inherit',
