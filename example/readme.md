@@ -11,7 +11,7 @@
 * jQuery
 
 ### Section 1
-**Bold** and **italic** ~~strike~~ test
+**Bold** and *italic* ~~strike~~ test
 
 ### Tables
 Colons can be used to align columns.
