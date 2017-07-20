@@ -12,7 +12,7 @@ angular
                 element.addClass('processed');
 
                 // Setup the markdown WYSIWYG.
-                element.markdown({
+                $(element).markdown({
                   autofocus: options.autofocus || false,
                   saveable: options.saveable || false,
                   savable: options.savable || false,
@@ -24,8 +24,8 @@ angular
                   language: options.language || 'en',
                   footer: options.footer || '',
                   fullscreen: options.fullscreen || { enable: true, icons: {}},
-                  hiddenButtons: options.hiddenButtons || null,
-                  disabledButtons: options.disabledButtons || null,
+                  hiddenButtons: options.hiddenButtons || [],
+                  disabledButtons: options.disabledButtons || [],
                   initialstate: options.initialstate || 'editor',
                   parser: options.parser || null,
                   dropZoneOptions: options.dropZoneOptions || null,
