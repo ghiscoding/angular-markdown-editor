@@ -12,7 +12,7 @@ angular
                 element.addClass('processed');
 
                 // Setup the markdown WYSIWYG.
-                element.markdown({
+                $(element).markdown({
                   autofocus: options.autofocus || false,
                   saveable: options.saveable || false,
                   savable: options.savable || false,
