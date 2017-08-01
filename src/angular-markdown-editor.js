@@ -24,13 +24,13 @@ angular
                   language: options.language || 'en',
                   footer: options.footer || '',
                   fullscreen: options.fullscreen || { enable: true, icons: {}},
-                  hiddenButtons: options.hiddenButtons || null,
-                  disabledButtons: options.disabledButtons || null,
+                  hiddenButtons: options.hiddenButtons || {},
+                  disabledButtons: options.disabledButtons || {},
                   initialstate: options.initialstate || 'editor',
                   parser: options.parser || null,
-                  dropZoneOptions: options.dropZoneOptions || null,
+                  dropZoneOptions: options.dropZoneOptions || {},
                   enableDropDataUri: options.enableDropDataUri || false,
-                  showButtons: options.showButtons || null,
+                  showButtons: options.showButtons || {},
                   additionalButtons: options.additionalButtons || (options.addExtraButtons ? addNewButtons() : []),
 
                   //-- Events/Hooks --
@@ -160,7 +160,7 @@ function runScopeFunction(scope, fnString, editorObject) {
     // if yes then run it through $eval else find it in the scope and then run it. That is the only way to evaluate all arguments of the function
     // we'll have to make the object available in the scope so that we can evaluate it inside the controller
     var lastParenthese = fnString.indexOf(")");
-    scope.$markdownEditorObject = editorObject; 
+    scope.$markdownEditorObject = editorObject;
     fnString = fnString.replace(")", "$markdownEditorObject)");
     result = scope.$eval(fnString);
   } else {
