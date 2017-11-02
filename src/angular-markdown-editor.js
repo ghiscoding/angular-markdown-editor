@@ -11,6 +11,12 @@ angular
             if (! element.hasClass('processed')) {
                 element.addClass('processed');
 
+                // if the directive was called after document.ready, e.g. because of ng-if then the element 
+                // will not have been initialized by bootstrap-markdown
+                if (element.markdown === undefined){
+                    element.data('markdown', (data = new $.fn.markdown.Constructor(element[0], {})))
+                }
+                
                 // Setup the markdown WYSIWYG.
                 element.markdown({
                   autofocus: options.autofocus || false,
