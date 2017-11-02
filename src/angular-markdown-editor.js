@@ -11,14 +11,7 @@ angular
             if (! element.hasClass('processed')) {
                 element.addClass('processed');
 
-                // if the directive was called after document.ready, e.g. because of ng-if then the element 
-                // will not have been initialized by bootstrap-markdown
-                if (element.markdown === undefined){
-                    element.data('markdown', (data = new $.fn.markdown.Constructor(element[0], {})))
-                }
-                
-                // Setup the markdown WYSIWYG.
-                element.markdown({
+                var markdownOptions = {
                   autofocus: options.autofocus || false,
                   saveable: options.saveable || false,
                   savable: options.savable || false,
@@ -69,7 +62,17 @@ angular
                       runScopeFunction(scope, attrs.onShow, e);
                     }
                   }
-                });
+                };
+
+                // Setup the markdown WYSIWYG.
+
+                // if the markdown editor was added dynamically the markdown function will be undefined
+                // so it has to be called explicitely
+                if (element.markdown === undefined){
+                    element.data('markdown', (data = new $.fn.markdown.Constructor(element[0], markdownOptions)))
+                } else {
+                    element.markdown(markdownOptions);
+                }
             }
         }
     };
