@@ -180,3 +180,20 @@ function runScopeFunction(scope, fnString, editorObject) {
   }
   return result;
 }
+
+/** Find a property inside an object.
+ * If a delimiter is passed as argument, we will split the search ID before searching
+ * @param object: source object
+ * @param string: searchId
+ * @return mixed: property found
+ */
+function objectFindById(sourceObject, searchId, delimiter) {
+  var split = (!!delimiter) ? searchId.split(delimiter) : searchId;
+
+  for (var k = 0, kln = split.length; k < kln; k++) {
+    if(!!sourceObject[split[k]]) {
+      sourceObject = sourceObject[split[k]];
+    }
+  }
+  return sourceObject;
+}
