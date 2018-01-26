@@ -5,14 +5,15 @@ angular
         restrict: 'A',
         require:  'ngModel',
         scope: {
-          buttonsFactory: "&additionalButtonsFactory"
+          additionalButtonsFactory: "&additionalButtons"
         },
         link: function(scope, element, attrs, ngModel) {
           var options = scope.$eval(attrs.markdownEditor);
 
-          // If the Buttons Factory was passed via attribute, execute it
-          var additionalButtons = scope.buttonsFactory != null ? scope.buttonsFactory() : [];
-
+          // Additional buttons were passed via attribute?
+          var additionalButtons = scope.additionalButtonsFactory();
+          additionalButtons = additionalButtons || [];
+          
             // Only initialize the $.markdown plugin once.
             if (! element.hasClass('processed')) {
                 element.addClass('processed');
@@ -95,7 +96,7 @@ angular
  * @return mixed additionButtons
  */
 function getNewButtons() {
-  return [[{
+  return [{
         name: "groupFont",
         data: [{
           name: "cmdStrikethrough",
@@ -161,7 +162,7 @@ function getNewButtons() {
             e.setSelection(cursor,cursor+chunk.length);
           }
         }]
-  }]];
+  }];
 }
 
 /** Evaluate a function name passed as string and run it from the scope.
