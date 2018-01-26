@@ -4,9 +4,16 @@ angular
     return {
         restrict: 'A',
         require:  'ngModel',
+        scope: {
+          additionalButtonsFactory: "&additionalButtons"
+        },
         link: function(scope, element, attrs, ngModel) {
           var options = scope.$eval(attrs.markdownEditor);
 
+          // Additional buttons were passed via attribute?
+          var additionalButtons = scope.additionalButtonsFactory();
+          additionalButtons = additionalButtons || [];
+          
             // Only initialize the $.markdown plugin once.
             if (! element.hasClass('processed')) {
                 element.addClass('processed');
@@ -30,7 +37,13 @@ angular
                   dropZoneOptions: options.dropZoneOptions || {},
                   enableDropDataUri: options.enableDropDataUri || false,
                   showButtons: options.showButtons || {},
-                  additionalButtons: options.additionalButtons || (options.addExtraButtons ? addNewButtons() : []),
+
+                  // Here, instead of using only externally defined buttons or the additional ones defined by angular-markdown-editor, both are merged if required.
+                  additionalButtons: [
+                    additionalButtons.concat(
+                      options.addExtraButtons ? getNewButtons() : []
+                    )
+                  ],
 
                   //-- Events/Hooks --
                   // each of them are defined as callback available in the directive
@@ -82,8 +95,8 @@ angular
  * Add new extra buttons: Strikethrough & Table
  * @return mixed additionButtons
  */
-function addNewButtons() {
-  return [[{
+function getNewButtons() {
+  return [{
         name: "groupFont",
         data: [{
           name: "cmdStrikethrough",
@@ -149,7 +162,7 @@ function addNewButtons() {
             e.setSelection(cursor,cursor+chunk.length);
           }
         }]
-  }]];
+  }];
 }
 
 /** Evaluate a function name passed as string and run it from the scope.
