@@ -8,47 +8,21 @@
     "bootstrap-markdown"
   ],
   "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve --port 4300 --open",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "build-lib": "npm-run-all packagr copy:lib",
-    "build-lib-demo": "npm-run-all build-lib del-demo:dist copy-demo:dist",
-    "copy:lib": "cross-env copyfiles --up 2 src/assets/lib/** dist",
-    "copy-demo:dist": "cross-env copyfiles --up 1 dist/**/*.* ../angular-markdown-editor-demo/node_lib/angular-markdown-editor",
-    "del-demo:dist": "cross-env rimraf ../angular-markdown-editor-demo/node_lib/angular-markdown-editor",
-    "pack-lib": "npm pack ./dist",
-    "packagr": "ng-packagr -p package.json"
-  },
   "author": "Ghislain B.",
   "repository": {
     "type": "git",
     "url": "http://github.com/ghiscoding/angular-markdown-editor"
   },
-  "main": "src/lib/angular-markdown-editor/index",
+  "main": "bundles/angular-markdown-editor.umd.js",
   "private": false,
-  "ngPackage": {
-    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
-    "whitelistedNonPeerDependencies": [
-      "."
-    ],
-    "dest": "dist",
-    "workingDirectory": ".ng_build",
-    "lib": {
-      "entryFile": "src/public_api.ts",
-      "umdModuleIds": {}
-    }
-  },
   "dependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-markdown": "toopay/bootstrap-markdown",
     "core-js": "^2.5.1",
     "font-awesome": "^4.7.0",
     "jquery": ">=3.2.1",
-    "vinyl-paths": "^2.1.0"
+    "vinyl-paths": "^2.1.0",
+    "tslib": "^1.7.1"
   },
   "devDependencies": {
     "@angular/animations": "^5.0.0",
@@ -103,5 +77,9 @@
     "uglify-js": "^3.3.20",
     "yargs": "^9.0.1",
     "zone.js": "^0.8.17"
-  }
+  },
+  "module": "esm5/angular-markdown-editor.js",
+  "es2015": "esm2015/angular-markdown-editor.js",
+  "typings": "angular-markdown-editor.d.ts",
+  "metadata": "angular-markdown-editor.metadata.json"
 }
