@@ -1,6 +1,6 @@
 {
   "name": "angular-markdown-editor",
-  "version": "2.0.0-beta",
+  "version": "2.0.1",
   "description": "Bootstrap Markdown components made available in Angular",
   "keywords": [
     "angular",
@@ -19,7 +19,6 @@
     "bootstrap": "^3.3.7",
     "bootstrap-markdown": "toopay/bootstrap-markdown",
     "core-js": "^2.5.1",
-    "font-awesome": "^4.7.0",
     "jquery": ">=3.2.1",
     "vinyl-paths": "^2.1.0",
     "tslib": "^1.7.1"
@@ -49,6 +48,7 @@
     "custom-event-polyfill": "^0.3.0",
     "del": "^3.0.0",
     "del-cli": "^1.1.0",
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-bump": "^2.7.0",
     "gulp-sass": "^3.1.0",

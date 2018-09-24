@@ -5,15 +5,9 @@ import { EditorOption } from './models';
 
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [
-    AngularMarkdownEditorComponent
-  ],
-  exports: [
-    AngularMarkdownEditorComponent
-  ],
+  imports: [CommonModule],
+  declarations: [AngularMarkdownEditorComponent],
+  exports: [AngularMarkdownEditorComponent],
   entryComponents: [AngularMarkdownEditorComponent]
 })
 export class AngularMarkdownEditorModule {

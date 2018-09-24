@@ -1,7 +1,6 @@
 import { EditorOption } from './models/editorOption.interface';
 
 export const GlobalEditorOptions: EditorOption = {
-  // additionalButtons: [],
   autofocus: false,
   disabledButtons: [],
   dropZoneOptions: null,

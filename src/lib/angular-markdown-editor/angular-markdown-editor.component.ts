@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, forwardRef, Inject, Injectable, Input, ViewChild } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { EditorLocale, EditorOption, Dictionary } from './models';
+import { EditorLocale, EditorOption } from './models';
 import { GlobalEditorOptions } from './global-editor-options';
 
 declare var $: any;

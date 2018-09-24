@@ -1,6 +1,6 @@
 {
   "name": "angular-markdown-editor",
-  "version": "2.0.0-beta",
+  "version": "2.0.1",
   "description": "Bootstrap Markdown components made available in Angular",
   "keywords": [
     "angular",
@@ -15,9 +15,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-lib": "npm-run-all packagr copy:lib",
+    "build-lib": "npm-run-all packagr",
     "build-lib-demo": "npm-run-all build-lib del-demo:dist copy-demo:dist",
-    "copy:lib": "cross-env copyfiles --up 2 src/assets/lib/** dist",
     "copy-demo:dist": "cross-env copyfiles --up 1 dist/**/*.* ../angular-markdown-editor-demo/node_lib/angular-markdown-editor",
     "del-demo:dist": "cross-env rimraf ../angular-markdown-editor-demo/node_lib/angular-markdown-editor",
     "pack-lib": "npm pack ./dist",
@@ -46,7 +45,6 @@
     "bootstrap": "^3.3.7",
     "bootstrap-markdown": "toopay/bootstrap-markdown",
     "core-js": "^2.5.1",
-    "font-awesome": "^4.7.0",
     "jquery": ">=3.2.1",
     "vinyl-paths": "^2.1.0"
   },
@@ -75,6 +73,7 @@
     "custom-event-polyfill": "^0.3.0",
     "del": "^3.0.0",
     "del-cli": "^1.1.0",
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-bump": "^2.7.0",
     "gulp-sass": "^3.1.0",
