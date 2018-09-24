@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MarkdownService } from 'ngx-markdown';
-import { EditorOption } from '../../lib/angular-markdown-editor';
+import { EditorInstance, EditorOption } from '../../lib/angular-markdown-editor';
 
 @Component({
   templateUrl: './reactive.component.html',
@@ -9,7 +9,7 @@ import { EditorOption } from '../../lib/angular-markdown-editor';
   styleUrls: ['./reactive.component.scss']
 })
 export class ReactiveComponent implements OnInit {
-  bsEditorInstance: any;
+  bsEditorInstance: EditorInstance;
   markdownText: string;
   showEditor = true;
   templateForm: FormGroup;

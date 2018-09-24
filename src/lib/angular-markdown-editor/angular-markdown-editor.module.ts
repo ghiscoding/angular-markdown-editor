@@ -8,12 +8,8 @@ import { EditorOption } from './models';
   imports: [
     CommonModule
   ],
-  declarations: [
-    AngularMarkdownEditorComponent
-  ],
-  exports: [
-    AngularMarkdownEditorComponent
-  ],
+  declarations: [AngularMarkdownEditorComponent],
+  exports: [AngularMarkdownEditorComponent],
   entryComponents: [AngularMarkdownEditorComponent]
 })
 export class AngularMarkdownEditorModule {
