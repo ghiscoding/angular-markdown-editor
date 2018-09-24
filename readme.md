@@ -19,7 +19,7 @@ Here is the list of dependencies, which are required
 It's a "nice to have" but not a deep dependencies, which is the [ngx-markdown](https://github.com/jfcere/ngx-markdown) lib. It is used in the demo of this lib, but technically you could plug any other lib you wish for dealing with the markdown preview.
 
 ### Demo page
-- [Bootstrap 3 demo](https://ghiscoding.github.io/angular-markdown-editor) / [examples repo](https://github.com/ghiscoding/angular-markdown-editor/tree/master/src/app/examples)
+- [Bootstrap 3 demo](https://ghiscoding.github.io/angular-markdown-editor) / [examples repo](https://github.com/ghiscoding/angular-markdown-editor-demo)
 
 
 ## Installation
