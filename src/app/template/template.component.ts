@@ -1,9 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MarkdownService } from 'ngx-markdown';
 import { EditorInstance, EditorLocale, EditorOption } from '../../lib/angular-markdown-editor';
-
-declare var $: any;
 
 @Component({
   templateUrl: './template.component.html',
@@ -11,7 +9,6 @@ declare var $: any;
   styleUrls: ['./template.component.scss']
 })
 export class TemplateComponent implements OnInit {
-  @ViewChild('markdownTextArea') el: ElementRef;
   bsEditorInstance: EditorInstance;
   markdownText: string;
   showEditor = true;

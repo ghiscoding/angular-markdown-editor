@@ -12,8 +12,9 @@
 
 <form novalidate>
     <div class="editor">
-        <label>Editor</label>
-        <angular-markdown-editor textareaId="editor1" [locale]="locale" [options]="editorOptions" rows="12" name="markdownText" [(ngModel)]="markdownText" (onFullscreenExit)="hidePreview()">
+        <label>Editor (with French locale)</label>
+        <angular-markdown-editor textareaId="editor1" [locale]="locale" [options]="editorOptions"
+            rows="12" name="markdownText" [(ngModel)]="markdownText" (onFullscreenExit)="hidePreview()">
         </angular-markdown-editor>
     </div>
 </form>

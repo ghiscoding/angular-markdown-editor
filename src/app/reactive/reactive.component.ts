@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MarkdownService } from 'ngx-markdown';
 import { EditorOption } from '../../lib/angular-markdown-editor';
@@ -9,7 +9,6 @@ import { EditorOption } from '../../lib/angular-markdown-editor';
   styleUrls: ['./reactive.component.scss']
 })
 export class ReactiveComponent implements OnInit {
-  @ViewChild('markdownTextArea') el: ElementRef;
   bsEditorInstance: any;
   markdownText: string;
   showEditor = true;
