@@ -65,6 +65,19 @@ For example, below we are adding the highlight for `C#`, `JavaScript` and `TypeS
 ],
 ```
 
+### Import Module
+```typescript
+import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
+
+@NgModule({
+  declarations: [],
+  imports: [AngularMarkdownEditorModule]
+
+  // or pre-define global configuration using the forRoot
+  // imports: [AngularMarkdownEditorModule.forRoot({ iconlibrary: 'fa' })]
+});
+```
+
 ### Input attributes
 You can pass the following input attribute:
 
@@ -76,7 +89,7 @@ You can pass the following input attribute:
 | **locale**    | EditorLocale | no | locale set that has a language and dictionary that can be added as an alternative language. Can be 1 or more dictionaries |
 
 ### Global Options
-The library comes with it's own Global Editor Options, these propertoes can be overriden at any by the `options` attribute. Click to see the [Global Options]() defined.
+The library comes with it's own Global Editor Options, these propertoes can be overriden at any by the `options` attribute. Click to see the [Global Options](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/lib/angular-markdown-editor/global-editor-options.ts) defined.
 
 ### Event Hooks
 You can hook to any of the [Bootstrap Markdown Editor Events](http://www.codingdrama.com/bootstrap-markdown/) through 2 ways, just choose the one you prefer:
@@ -148,7 +161,7 @@ export class MyComponent {
 - onShow
 
 ### API - Editor Methods
-The editor API is quite dense and I will not list the entire set of methods, but you can see the entire list [here]().
+The editor API is quite dense and I will not list the entire set of methods, but you can see the entire list from the [Editor Method Interface](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/lib/angular-markdown-editor/models/editorMethod.interface.ts).
 To call any of the Editor Methods, you will have to first get a reference to the Editor's instance which you can get from the `onShow` callback.
 
 Get the Editor's instance through the `onShow`, via the Custom Event (from the View) or Editor Option callback (just choose the one you prefer). Below shows how to get it through the latter option.
@@ -201,10 +214,10 @@ export class TestComponent implements OnInit {
 ```
 
 ### Additional Editor Buttons
-I really thought that some buttons were missing to go a great job (~~Strikethrough~~ & **Table**). So I added them directly in the [Global Options](). If you want to add your own, then just look at how it was done in the [Global Options]() and read the section `additionalButtons` of [Bootstrap Markdown](http://www.codingdrama.com/bootstrap-markdown/) website.
+I really thought that some buttons were missing to go a great job (~~Strikethrough~~ & **Table**). So I added them directly in the [Global Options](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/lib/angular-markdown-editor/global-editor-options.ts). If you want to add your own, then just look at how it was done in the [Global Options](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/lib/angular-markdown-editor/global-editor-options.ts) and read the section `additionalButtons` of [Bootstrap Markdown](http://www.codingdrama.com/bootstrap-markdown/) website.
 
 ### Adding Locale
-You can add a locale to the editor but passing a `locale` object (and bind it in the View) which contain a `language` and the dictionary of words used by the editor. The entire list of words can be seen in the example below. So for example, if we want to add French locale, we will do the following (you can see [demo code]()):
+You can add a locale to the editor but passing a `locale` object (and bind it in the View) which contain a `language` and the dictionary of words used by the editor. The entire list of words can be seen in the example below. So for example, if we want to add French locale, we will do the following (you can see [demo code](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/app/template/template.component.ts)):
 
 ###### View
 ```html
