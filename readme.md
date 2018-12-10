@@ -10,7 +10,7 @@ If you still have AngularJS project, you can still get the older version `1.1.5`
 
 ### Dependencies
 Here is the list of dependencies, which are required
-- [Bootstrap-Markdown](http://www.codingdrama.com/bootstrap-markdown/) (editor) itself
+- [Bootstrap-Markdown](http://www.taufanaditya.com/bootstrap-markdown/) (editor) itself
 - [jQuery](http://jquery.com/) _(required for Bootstrap-Markdown editor)_
 - [Bootstrap 3.x](https://getbootstrap.com/docs/3.3/).
    - If anyone needs `Bootstrap 4` support and has time to add the necessary code, [PR](https://github.com/ghiscoding/angular-markdown-editor/pulls) (Pull Request) are certainly welcome.
