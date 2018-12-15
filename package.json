@@ -42,7 +42,7 @@
     }
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.0",
     "bootstrap-markdown": "toopay/bootstrap-markdown",
     "core-js": "^2.5.1",
     "font-awesome": "^4.7.0",
