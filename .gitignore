@@ -45,3 +45,8 @@ yarn.lock
 # System Files
 .DS_Store
 Thumbs.db
+
+# package manager files
+package-lock.json
+yarn.lock
+yarn-error.log

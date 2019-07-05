@@ -16,3 +16,8 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 .chrome
+
+# package manager files
+package-lock.json
+yarn.lock
+yarn-error.log
