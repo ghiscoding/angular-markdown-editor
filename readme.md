@@ -36,8 +36,9 @@ npm install angular-markdown-editor
 yarn add angular-markdown-editor
 ```
 
-### Modify the `.angular-cli.json` file
-You need to add CSS Styles for the Bootstrap, Markdown Editor and Font-Awesome (the latter is optional).
+### Modify the `angular.json` file
+You need to add CSS Styles for the Bootstrap, Markdown Editor and Font-Awesome (the latter is optional). 
+Also make sure to include the proper 3rd party javascript libraries in your `scripts` as shown below.
 
 ```json
 "styles": [
