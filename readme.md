@@ -215,6 +215,18 @@ export class TestComponent implements OnInit {
 }
 ```
 
+### Security - Dealing with Cross Site Scripting (XSS)
+If you want to use this package for any type of users, you should consider sanatizing your data for Cross Site Scripting (XSS) attack. A good package to use for sanitizing is [DOMPurify](https://www.npmjs.com/package/dompurify) and you should sanitize your data when calling the `parser` as shown below. Also if you have any Markdown Preview, remember to sanitize them as well probably via the form input or control.
+
+```ts
+this.editorOptions = {  
+  parser: (val: string) => {
+    const sanitizedText = DOMPurify.sanitize(val.trim());
+    this.markdownService.compile(sanitizedText);
+  }
+};
+```
+
 ### Additional Editor Buttons
 I really thought that some buttons were missing to go a great job (~~Strikethrough~~ & **Table**). So I added them directly in the [Global Options](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/lib/angular-markdown-editor/global-editor-options.ts). If you want to add your own, then just look at how it was done in the [Global Options](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/lib/angular-markdown-editor/global-editor-options.ts) and read the section `additionalButtons` of [Bootstrap Markdown](http://www.codingdrama.com/bootstrap-markdown/) website.
 
