@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 [![npm version](https://badge.fury.io/js/angular-markdown-editor.svg)](//npmjs.com/package/angular-markdown-editor)
-[![NPM downloads](https://img.shields.io/npm/dt/angular-markdown-editor.svg)](https://npmjs.org/package/angular-markdown-editor)
+[![NPM downloads](https://img.shields.io/npm/dy/angular-markdown-editor.svg)](https://npmjs.org/package/angular-markdown-editor)
 
 In this package we will use a few libraries and tools to make a more convenient "all in one" WYSIWYG Markdown Editor with preview. All of that with a simple Angular Component. This can be useful for online documentation and many other reasons (docs, blog, ...).
 
