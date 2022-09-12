@@ -6,22 +6,32 @@
 
 In this package we will use a few libraries and tools to make a more convenient "all in one" WYSIWYG Markdown Editor with preview. All of that with a simple Angular Component. This can be useful for online documentation and many other reasons (docs, blog, ...).
 
-#### AngularJS (previous version)
-If you still have AngularJS project, you can still get the older version `1.1.5` from [NPM](https://www.npmjs.com/package/angular-markdown-editor/v/1.1.5), however please note that support has stopped and only the new version `2.x` will be supported.
+## License
+[MIT License](LICENSE)
+
+### Like it? :star: it
+You like to use **Angular-Markdown-Editor**? Be sure to upvote :star: the, also maybe support me with cafeine :coffee: and feel free to contribute. 👷👷‍♀️
+
+<a href='https://ko-fi.com/ghiscoding' target='_blank'><img height='32' style='border:0px;height:32px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+
+## Angular Compatibility
+- version `1.x` for AngularJS 1.x (EOL)
+- version `2.x` for Angular 4-5
+- version `3.x` for Angular 14+
+  - Ivy only
+  - this version works with Bootstrap 4 and 5
 
 ### Dependencies
-Here is the list of dependencies, which are required
-- [Bootstrap-Markdown](http://www.taufanaditya.com/bootstrap-markdown/) (editor) itself
+Here is the list of required dependencies
+- [Bootstrap-Markdown](https://github.com/refactory-id/bootstrap-markdown) (editor) itself
 - [jQuery](http://jquery.com/) _(required for Bootstrap-Markdown editor)_
-- [Bootstrap 3.x](https://getbootstrap.com/docs/3.3/).
-   - If anyone needs `Bootstrap 4` support and has time to add the necessary code, [PR](https://github.com/ghiscoding/angular-markdown-editor/pulls) (Pull Request) are certainly welcome.
+- [Bootstrap >=4.x](https://getbootstrap.com/)
 
 ### Nice to have Dependencies
-It's a "nice to have" but not a deep dependencies, which is the [ngx-markdown](https://github.com/jfcere/ngx-markdown) lib. It is used in the demo of this lib, but technically you could plug any other lib you wish for dealing with the markdown preview.
+It's a "nice to have" extra but not a hard dependencies, which is the [ngx-markdown](https://github.com/jfcere/ngx-markdown) lib. It is used in the demo of this lib, but technically you could plug any other lib you wish for dealing with the markdown preview.
 
 ### Demo page
-- [Bootstrap 3 demo](https://ghiscoding.github.io/angular-markdown-editor) / [examples repo](https://github.com/ghiscoding/angular-markdown-editor-demo)
-
+- [Bootstrap 5 demo](https://ghiscoding.github.io/angular-markdown-editor) / [examples repo](https://github.com/ghiscoding/angular-markdown-editor-demo)
 
 ## Installation
 
@@ -37,33 +47,33 @@ yarn add angular-markdown-editor
 ```
 
 ### Modify the `angular.json` file
-You need to add CSS Styles for the Bootstrap, Markdown Editor and Font-Awesome (the latter is optional). 
+You need to add CSS Styles for the Bootstrap, Markdown Editor and Font-Awesome v4.7.
 Also make sure to include the proper 3rd party javascript libraries in your `scripts` as shown below.
 
 ```json
 "styles": [
-    "../node_modules/bootstrap/dist/css/bootstrap.css",
-    "../node_modules/bootstrap-markdown/css/bootstrap-markdown.min.css",
-    "../node_modules/font-awesome/css/font-awesome.css"
+    "node_modules/bootstrap/dist/css/bootstrap.css",
+    "node_modules/bootstrap-markdown/css/bootstrap-markdown.min.css",
+    "node_modules/font-awesome/css/font-awesome.css"
 ],
 "scripts": [
-    "../node_modules/jquery/dist/jquery.js",
-    "../node_modules/bootstrap-markdown/js/bootstrap-markdown.js"
+    "node_modules/jquery/dist/jquery.js",
+    "node_modules/bootstrap-markdown/js/bootstrap-markdown.js"
 ],
 ```
 
-#### When using `ngx-markdown` and/or Prism.js
+#### When using `ngx-markdown` and/or `Prism.js`
 `Prism.js` uses separate javascript file for each language, so you'll need to add them yourself.
 For example, below we are adding the highlight for `C#`, `JavaScript` and `TypeScript`:
 ```json
 "styles": [
-    "../node_modules/prismjs/themes/prism.css"
+    "node_modules/prismjs/themes/prism.css"
 ],
 "scripts": [
-    "../node_modules/prismjs/prism.js",
-    "../node_modules/prismjs/components/prism-css.min.js",
-    "../node_modules/prismjs/components/prism-javascript.min.js",
-    "../node_modules/prismjs/components/prism-typescript.min.js"
+    "node_modules/prismjs/prism.js",
+    "node_modules/prismjs/components/prism-css.min.js",
+    "node_modules/prismjs/components/prism-javascript.min.js",
+    "node_modules/prismjs/components/prism-typescript.min.js"
 ],
 ```
 
@@ -122,8 +132,8 @@ You can also pass the Event returned by the Editor via `$event.detail.eventData`
 ```
 ```typescript
 export class MyComponent {
-  ngOnInit() {
-    onChange(e) { console.log(e.getContent()); }
+  onChange(e) {
+    console.log(e.getContent());
   }
 }
 ```
@@ -151,16 +161,16 @@ export class MyComponent {
 ```
 
 #### List of Event Hooks
-- onPreview
-- onPreviewEnd
-- onSave
-- onBlur
-- onFocus
-- onFullscreen
-- onFullscreenExit
-- onChange
-- onSelect
-- onShow
+- `onPreview`
+- `onPreviewEnd`
+- `onSave`
+- `onBlur`
+- `onFocus`
+- `onFullscreen`
+- `onFullscreenExit`
+- `onChange`
+- `onSelect`
+- `onShow`
 
 ### API - Editor Methods
 The editor API is quite dense and I will not list the entire set of methods, but you can see the entire list from the [Editor Method Interface](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/lib/angular-markdown-editor/models/editorMethod.interface.ts).
@@ -209,7 +219,7 @@ export class TestComponent implements OnInit {
 
   ngOnInit() {
     this.editorOptions = {
-      parser: (val) => this.markdownService.compile(val.trim())
+      parser: (val) => this.markdownService.parse(val.trim())
     };
   }
 }
@@ -219,16 +229,16 @@ export class TestComponent implements OnInit {
 If you want to use this package for any type of users, you should consider sanatizing your data for Cross Site Scripting (XSS) attack. A good package to use for sanitizing is [DOMPurify](https://www.npmjs.com/package/dompurify) and you should sanitize your data when calling the `parser` as shown below. Also if you have any Markdown Preview, remember to sanitize them as well probably via the form input or control.
 
 ```ts
-this.editorOptions = {  
+this.editorOptions = {
   parser: (val: string) => {
     const sanitizedText = DOMPurify.sanitize(val.trim());
-    this.markdownService.compile(sanitizedText);
+    this.markdownService.parse(sanitizedText);
   }
 };
 ```
 
 ### Additional Editor Buttons
-I really thought that some buttons were missing to go a great job (~~Strikethrough~~ & **Table**). So I added them directly in the [Global Options](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/lib/angular-markdown-editor/global-editor-options.ts). If you want to add your own, then just look at how it was done in the [Global Options](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/lib/angular-markdown-editor/global-editor-options.ts) and read the section `additionalButtons` of [Bootstrap Markdown](http://www.codingdrama.com/bootstrap-markdown/) website.
+I really thought that some buttons were missing to go a great job (~~Strikethrough~~ & **Table**). So I added them directly in the [Global Options](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/lib/angular-markdown-editor/global-editor-options.ts). If you want to add your own, then just look at how it was done in the [Global Options](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/lib/angular-markdown-editor/global-editor-options.ts) and read the section `additionalButtons` of [Bootstrap Markdown](https://github.com/refactory-id/bootstrap-markdown) website.
 
 ### Adding Locale
 You can add a locale to the editor but passing a `locale` object (and bind it in the View) which contain a `language` and the dictionary of words used by the editor. The entire list of words can be seen in the example below. So for example, if we want to add French locale, we will do the following (you can see [demo code](https://github.com/ghiscoding/angular-markdown-editor/blob/master/src/app/template/template.component.ts)):
@@ -294,13 +304,3 @@ export class MyComponent {
 ```
 
 **Note** I could not find a way to change the language dynamically, so it seems that we would have to destroy the component and re-create it for switching the language/locale.
-
-### License
-[MIT License](LICENSE)
-
-## Use it, like it?
-You like and use this great library `Angular-Markdown-Editor`? You can always upvote :star: and/or contribute :)
-
-## Like my work?
-If you like my work, you can also support me with caffeine :smile:
-[Buy Me a Coffee](https://ko-fi.com/N4N679OT)

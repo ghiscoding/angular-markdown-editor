@@ -2,7 +2,7 @@ import { AppRoutingRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MarkdownModule, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
 
@@ -12,36 +12,35 @@ import { AngularMarkdownEditorModule } from '../lib/angular-markdown-editor/angu
 import { ReactiveComponent } from './reactive/reactive.component';
 import { TemplateComponent } from './template/template.component';
 
+// @dynamic
 @NgModule({
   declarations: [
     AppComponent,
     ReactiveComponent,
-    TemplateComponent
+    TemplateComponent,
   ],
   imports: [
     AppRoutingRoutingModule,
     BrowserModule,
     FormsModule,
     MarkdownModule.forRoot({
-      provide: MarkedOptions,
-      useFactory: (): MarkedOptions => {
-        return {
-          renderer: new MarkedRenderer(),
+      // loader: HttpClient, // optional, only if you use [src] attribute
+      markedOptions: {
+        provide: MarkedOptions,
+        useValue: {
           gfm: true,
-          tables: true,
           breaks: false,
           pedantic: false,
-          sanitize: false,
           smartLists: true,
           smartypants: false,
-        };
+        },
       },
     }),
     ReactiveFormsModule,
     AngularMarkdownEditorModule.forRoot({
       // add any Global Options/Config you might want
       // to avoid passing the same options over and over in each components of your App
-      iconlibrary: 'glyph'
+      iconlibrary: 'fa'
     })
   ],
   bootstrap: [AppComponent]

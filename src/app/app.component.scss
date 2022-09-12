@@ -1,5 +1,10 @@
+$navbar-height: 56px;
+
 .body-content {
-  margin-top: 50px;
+  margin-top: $navbar-height;
+}
+.lightblue {
+  color: lightblue;
 }
 .red {
   color: red;
@@ -9,4 +14,17 @@
 }
 .faded:hover {
     opacity: 0.5;
+}
+
+section {
+  margin: 0;
+}
+
+.demo-content {
+  padding-top: $navbar-height;
+}
+
+.github-button-container {
+  display: flex;
+  align-items: center;
 }
