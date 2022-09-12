@@ -16,8 +16,9 @@ You like to use **Angular-Markdown-Editor**? Be sure to upvote :star: the, also 
 
 ## Angular Compatibility
 - version `1.x` for AngularJS 1.x (EOL)
-- version `2.x` for Angular 4-5
-- version `3.x` for Angular 14+
+- version `2.x` for Angular >= 4.x
+  - requires Bootstrap 3.x
+- version `3.x` for Angular >= 14.x
   - Ivy only
   - this version works with Bootstrap 4 and 5
 
