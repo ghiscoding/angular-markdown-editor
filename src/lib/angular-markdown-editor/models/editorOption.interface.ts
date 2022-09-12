@@ -2,7 +2,7 @@ import { IconSet } from './iconSet.interface';
 
 export interface EditorOption {
   /** Indicates that editor will focused after instantiated. Default to false */
-  autofocus?:	boolean;
+  autofocus?: boolean;
 
   /** Array or additional icon set that can be added to the editor as new icon set family. Default is empty string */
   customIcons?: any;
@@ -14,7 +14,7 @@ export interface EditorOption {
   initialstate?: 'preview' | 'editor' | 'fullscreen';
 
   /** Indicates that editor will have save button and action. Default to false */
-  savable?:	boolean;
+  savable?: boolean;
 
   /** If set to true then the editor will be hidden on blur event. Default to false */
   hideable?: boolean;
@@ -31,7 +31,7 @@ export interface EditorOption {
    */
   resize?: string;
 
-  /** The icon library to use. Glyphicons (glyph), Font Awesome (fa) and Octicons (octicons) are supported. In order to use Font Awesome properly, you'll need to include Font Awesome stylesheet yourself. Also for use Octicons, follow instructions here. Default to glyph */
+  /** The icon library to use. The only supported library at this point is Font Awesome v4.7 (fa). Default to "fa" */
   iconlibrary?: string;
 
   /** Localization setting. Default to en */

@@ -7,7 +7,7 @@
 .ng_build
 
 # dependencies
-/node_modules
+**/node_modules
 
 # IDEs and editors
 /.idea
@@ -27,6 +27,7 @@
 .chrome
 
 # misc
+/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
@@ -35,18 +36,24 @@ npm-debug.log
 testem.log
 /typings
 yarn-error.log
-package-lock.json
-yarn.lock
-
-# e2e
-/e2e/*.js
-/e2e/*.map
 
 # System Files
 .DS_Store
 Thumbs.db
 
-# package manager files
-package-lock.json
-yarn.lock
-yarn-error.log
+# Distribution/Demo folders
+dist/
+docs/
+
+# Tests Report & Coverage
+**/node_modules
+**/coverage
+**/jest-coverage
+**/dist
+**/*.tgz
+**/junit.xml
+**/test-report.xml
+**/testresult.xml
+
+# Node Version Manager files
+.naverc

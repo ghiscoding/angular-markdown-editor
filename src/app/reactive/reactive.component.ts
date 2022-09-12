@@ -9,30 +9,30 @@ import { EditorInstance, EditorOption } from '../../lib/angular-markdown-editor'
   styleUrls: ['./reactive.component.scss']
 })
 export class ReactiveComponent implements OnInit {
-  bsEditorInstance: EditorInstance;
-  markdownText: string;
+  bsEditorInstance!: EditorInstance;
+  markdownText = '';
   showEditor = true;
-  templateForm: FormGroup;
-  editorOptions: EditorOption;
+  templateForm!: FormGroup;
+  editorOptions!: EditorOption;
 
   constructor(
     private fb: FormBuilder,
     private markdownService: MarkdownService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.editorOptions = {
       autofocus: false,
       iconlibrary: 'fa',
       savable: false,
-      onFullscreenExit: (e) => this.hidePreview(e),
+      onFullscreenExit: (e) => this.hidePreview(),
       onShow: (e) => this.bsEditorInstance = e,
       parser: (val) => this.parse(val)
     };
 
     // put the text completely on the left to avoid extra white spaces
     this.markdownText =
-`### Markdown example
+      `### Markdown example
 ---
 This is an **example** where we bind a variable to the \`markdown\` component that is also bind to the editor.
 #### example.component.ts
@@ -52,7 +52,7 @@ function hello() {
   }
 
 
-  buildForm(markdownText) {
+  buildForm(markdownText: string) {
     this.templateForm = this.fb.group({
       body: [markdownText],
       isPreview: [true]
@@ -66,7 +66,7 @@ function hello() {
     });
   }
 
-  hidePreview(e) {
+  hidePreview() {
     if (this.bsEditorInstance && this.bsEditorInstance.hidePreview) {
       this.bsEditorInstance.hidePreview();
     }
@@ -80,7 +80,7 @@ function hello() {
   }
 
   parse(inputValue: string) {
-    const markedOutput = this.markdownService.compile(inputValue.trim());
+    const markedOutput = this.markdownService.parse(inputValue.trim());
     this.highlight();
 
     return markedOutput;
