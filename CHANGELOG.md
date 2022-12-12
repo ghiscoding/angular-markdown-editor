@@ -3,9 +3,9 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [3.0.2](https://github.com/ghiscoding/angular-markdown-editor/compare/v3.0.1...v3.0.2) (2022-12-12)
 
-# Changelog
+### Bug Fixes
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+fix: forRoot now requires explicit type ModuleWithProviders, fixes #39 ([973b72](https://github.com/ghiscoding/angular-markdown-editor/commit/973b72f75350fffc36d8d8ddcac769edf327fbfa))
 
 ## [3.0.0](https://github.com/ghiscoding/angular-markdown-editor/compare/v2.0.2...v3.0.0) (2022-09-12)
 
