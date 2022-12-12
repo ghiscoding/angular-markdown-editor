@@ -18,12 +18,13 @@
     "start": "ng serve --port 4300",
     "postinstall": "ngcc",
     "prebuild": "npm-run-all delete:dist lint",
-    "build": "npm run packagr",
+    "build": "ng-packagr -p ng-package.json",
     "delete:dist": "cross-env rimraf dist",
     "lint": "ng lint",
     "packagr": "ng-packagr -p ng-package.json",
     "build:demo": "ng build --configuration=production --base-href=\"\"",
-    "pack-lib": "npm pack ./dist"
+    "pack-lib": "npm pack ./dist",
+    "release": "release-it --only-version"
   },
   "repository": {
     "type": "git",
@@ -62,6 +63,7 @@
     "@angular/platform-browser": "^14.2.10",
     "@angular/platform-browser-dynamic": "^14.2.10",
     "@angular/router": "^14.2.10",
+    "@release-it/conventional-changelog": "^5.1.1",
     "@types/jquery": "^3.5.14",
     "@types/node": "^18.7.16",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
@@ -73,6 +75,7 @@
     "ng-packagr": "^14.2.2",
     "ngx-markdown": "^14.0.1",
     "npm-run-all2": "^6.0.4",
+    "release-it": "^15.5.1",
     "rimraf": "^3.0.2",
     "sass": "^1.56.1",
     "ts-node": "^10.9.1",
