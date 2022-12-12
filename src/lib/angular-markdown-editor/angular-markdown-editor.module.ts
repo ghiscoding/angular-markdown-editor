@@ -1,19 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { AngularMarkdownEditorComponent } from './angular-markdown-editor.component';
 import { EditorOption } from './models';
 
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: [AngularMarkdownEditorComponent],
   exports: [AngularMarkdownEditorComponent],
-  entryComponents: [AngularMarkdownEditorComponent]
 })
 export class AngularMarkdownEditorModule {
-  static forRoot(config: EditorOption = {}) {
+  static forRoot(config: EditorOption = {}): ModuleWithProviders<AngularMarkdownEditorModule> {
     return {
       ngModule: AngularMarkdownEditorModule,
       providers: [
