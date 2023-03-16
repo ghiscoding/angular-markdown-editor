@@ -4,7 +4,7 @@
 [![npm version](https://badge.fury.io/js/angular-markdown-editor.svg)](//npmjs.com/package/angular-markdown-editor)
 [![NPM downloads](https://img.shields.io/npm/dy/angular-markdown-editor.svg)](https://npmjs.org/package/angular-markdown-editor)
 
-In this package we will use a few libraries and tools to make a more convenient "all in one" WYSIWYG Markdown Editor with preview. All of that with a simple Angular Component. This can be useful for online documentation and many other reasons (docs, blog, ...).
+This package includes a few libraries and tools to make a more convenient "all in one" WYSIWYG Markdown Editor with preview. All of that bundled into a simple Angular Component. This package can be useful for online documentation and/or anything similar (docs, blog, ...).
 
 ## License
 [MIT License](LICENSE)
@@ -28,10 +28,11 @@ Here is the list of required dependencies
 - [jQuery](http://jquery.com/) _(required for Bootstrap-Markdown editor)_
 - [Bootstrap >=4.x](https://getbootstrap.com/)
 
-### Nice to have Dependencies
-It's a "nice to have" extra but not a hard dependencies, which is the [ngx-markdown](https://github.com/jfcere/ngx-markdown) lib. It is used in the demo of this lib, but technically you could plug any other lib you wish for dealing with the markdown preview.
+### Nice to have Dependency
+It's a "nice to have" extra, but not a hard dependency, which is to include the [ngx-markdown](https://github.com/jfcere/ngx-markdown) library. It is used in the demo of this package, but technically you could plug any other library that you wish for dealing with the markdown preview.
 
 ### Demo page
+Standalone demo project, with Angular 14 & Bootstrap 5, that you can clone to easily get started
 - [Bootstrap 5 demo](https://ghiscoding.github.io/angular-markdown-editor) / [examples repo](https://github.com/ghiscoding/angular-markdown-editor-demo)
 
 ## Installation
@@ -47,8 +48,8 @@ npm install angular-markdown-editor
 yarn add angular-markdown-editor
 ```
 
-### Modify the `angular.json` file
-You need to add CSS Styles for the Bootstrap, Markdown Editor and Font-Awesome v4.7.
+### Modify your `angular.json` config
+You need to add the necessary CSS Styles for Bootstrap, Markdown Editor and Font-Awesome v4.7.
 Also make sure to include the proper 3rd party javascript libraries in your `scripts` as shown below.
 
 ```json
@@ -65,7 +66,7 @@ Also make sure to include the proper 3rd party javascript libraries in your `scr
 
 #### When using `ngx-markdown` and/or `Prism.js`
 `Prism.js` uses separate javascript file for each language, so you'll need to add them yourself.
-For example, below we are adding the highlight for `C#`, `JavaScript` and `TypeScript`:
+For example, we are showing below the highlight of `C#`, `JavaScript` and `TypeScript` language:
 ```json
 "styles": [
     "node_modules/prismjs/themes/prism.css"
