@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, forwardRef, Inject, Input } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, forwardRef, Inject, Input, Output} from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { EditorLocale, EditorOption } from './models';
 import { GlobalEditorOptions } from './global-editor-options';
@@ -32,6 +32,18 @@ export class AngularMarkdownEditorComponent implements AfterViewInit {
 
   /** Number of rows for the textarea */
   @Input() rows = 10;
+
+  /** These do not actually ever emit, since bootstrap-markdown already emits the event. This is simply just for typings **/
+  @Output('onShow') private readonly _onShow: EventEmitter<any> = new EventEmitter<any>();
+  @Output('onPreview') private readonly _onPreview: EventEmitter<any> = new EventEmitter<any>();
+  @Output('onPreviewEnd') private readonly _onPreviewEnd: EventEmitter<any> = new EventEmitter<any>();
+  @Output('onSave') private readonly _onSave: EventEmitter<any> = new EventEmitter<any>();
+  @Output('onBlur') private readonly _onBlur: EventEmitter<any> = new EventEmitter<any>();
+  @Output('onFocus') private readonly _onFocus: EventEmitter<any> = new EventEmitter<any>();
+  @Output('onChange') private readonly _onChange: EventEmitter<any> = new EventEmitter<any>();
+  @Output('onFullscreen') private readonly _onFullscreen: EventEmitter<any> = new EventEmitter<any>();
+  @Output('onFullscreenExit') private readonly _onFullscreenExit: EventEmitter<any> = new EventEmitter<any>();
+  @Output('onSelect') private readonly _onSelect: EventEmitter<any> = new EventEmitter<any>();
 
   public value: any | any[];
   public onModelChange: Function = () => { };
