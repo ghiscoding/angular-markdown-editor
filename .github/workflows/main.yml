@@ -24,11 +24,11 @@ jobs:
 
     steps:
       - name: Clone repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 3
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ~/.cache/yarn
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
