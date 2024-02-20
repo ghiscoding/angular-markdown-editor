@@ -66,7 +66,7 @@ Also make sure to include the proper 3rd party javascript libraries in your `scr
 
 #### When using `ngx-markdown` and/or `Prism.js`
 `Prism.js` uses separate javascript file for each language, so you'll need to add them yourself.
-For example, we are showing below the highlight of `C#`, `JavaScript` and `TypeScript` language:
+For example, we are showing below the highlight of `CSS`, `JavaScript` and `TypeScript` language:
 ```json
 "styles": [
     "node_modules/prismjs/themes/prism.css"
