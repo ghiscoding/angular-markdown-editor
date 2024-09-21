@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "bootstrap": ">=4.6.2",
-    "bootstrap-markdown": "toopay/bootstrap-markdown",
+    "bootstrap-markdown": "refactory-id/bootstrap-markdown",
     "font-awesome": "^4.7.0",
     "jquery": "^3.7.0"
   },
