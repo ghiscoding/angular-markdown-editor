@@ -2949,9 +2949,9 @@ boolbase@^1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==
 
-bootstrap-markdown@toopay/bootstrap-markdown:
+bootstrap-markdown@refactory-id/bootstrap-markdown:
   version "2.10.0"
-  resolved "https://codeload.github.com/toopay/bootstrap-markdown/tar.gz/a496d34b9bd34451c8315a850472f794c8df7d53"
+  resolved "https://codeload.github.com/refactory-id/bootstrap-markdown/tar.gz/a496d34b9bd34451c8315a850472f794c8df7d53"
 
 bootstrap@>=4.6.2:
   version "5.2.2"
