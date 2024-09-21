@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com/ghiscoding/angular-markdown-editor/compare/v3.1.0...v3.1.1) (2024-09-21)
+
+
+### Bug Fixes
+
+* update github link of bootstrap-markdown dep, fixes [#64](https://github.com/ghiscoding/angular-markdown-editor/issues/64) ([40da5ef](https://github.com/ghiscoding/angular-markdown-editor/commit/40da5ef47fd009f8c68357851bcf4f6ea27a979f))
+
 # [3.1.0](https://github.com/ghiscoding/angular-markdown-editor/compare/v3.0.2...v3.1.0) (2023-04-07)
 
 # Change Log
