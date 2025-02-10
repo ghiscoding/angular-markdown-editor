@@ -12,7 +12,7 @@ This package includes a few libraries and tools to make a more convenient "all i
 ### Like it? :star: it
 You like to use **Angular-Markdown-Editor**? Be sure to upvote :star: the, also maybe support me with cafeine :coffee: and feel free to contribute. 👷👷‍♀️
 
-<a href='https://ko-fi.com/ghiscoding' target='_blank'><img height='32' style='border:0px;height:32px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+<a href='https://ko-fi.com/N4N679OT' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ## Angular Compatibility
 - version `1.x` for AngularJS 1.x (EOL)
