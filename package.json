@@ -51,7 +51,7 @@
     "@angular-eslint/template-parser": "^14.4.0",
     "@angular/animations": "^14.3.0",
     "@angular/cli": "^14.2.13",
-    "@angular/common": "^14.3.0",
+    "@angular/common": "^19.2.16",
     "@angular/compiler": "^14.3.0",
     "@angular/compiler-cli": "^14.3.0",
     "@angular/core": "^14.3.0",
